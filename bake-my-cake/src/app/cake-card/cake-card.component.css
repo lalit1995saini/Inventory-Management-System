@@ -1,0 +1,31 @@
+.cake-card{
+    width: 21%;
+    margin: 30px 28px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #FEF2F4;
+    color:black;
+    transition: 0.4s;
+    border-radius: 10px
+}
+.cart-icon{
+    display: inline;
+    margin-right: 40px;
+    color:orangered;
+}
+.cart-icon:hover{
+    color: #FFABAB;
+}
+#bigimg{
+    height: 250px;
+}
+.cake-card:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 2px 2px 2px black;
+    z-index: 2;
+}
+mat-card-subtitle:hover{
+    cursor: pointer;
+}

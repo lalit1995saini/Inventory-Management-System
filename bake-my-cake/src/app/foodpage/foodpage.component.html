@@ -1,0 +1,25 @@
+<div class="container">
+    <img [src]="cake.imageUrl" alt="cake.name">
+
+    <div class="details">
+        <div class="header">
+            <span class="name">
+                {{cake.name}}
+            </span>
+        </div>
+        <div class="origins">
+            <span *ngFor="let origin of cake.origins">
+                {{origin}}
+            </span>
+        </div>
+        <div class="tag">
+            <app-tags [foodpagetags]="cake.tags" justifyContent="start"></app-tags>
+        </div>
+        <div class="price">
+            <span>
+                {{cake.price | currency}}
+            </span>
+        </div>
+        <button (click)="addToCart() ">Add to Cart</button>
+    </div>
+</div>

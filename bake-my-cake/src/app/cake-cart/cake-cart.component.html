@@ -1,0 +1,81 @@
+<section id="cake-content">
+    <div id="cake-detail">
+        <h1>{{cake?.name}}</h1>
+        <img mat-card-image src="../../assets/images/{{cake?.image}}.jpg">
+        <h4 id="description">{{cake?.description}} available at only Rs. {{cake?.price}}/-</h4>
+    </div>
+
+    <form id="cake-form" (ngSubmit)="onSubmit()" [formGroup]="cakeForm">
+        <h2>Fill your details here</h2>
+
+        <mat-form-field>
+            <mat-label>Name:</mat-label>
+            <input matInput type="text" formControlName="name" [(ngModel)]="customer.name">
+            <mat-error *ngIf="name?.errors?.['required']">
+                Name is required
+            </mat-error>
+            <mat-error *ngIf="name?.errors?.['minLength']">
+                Minimum length is 2
+            </mat-error>
+
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Phone:</mat-label>
+            <input matInput type="text" formControlName="phone" [(ngModel)]="customer.phone">
+            <mat-error *ngIf="phone?.errors?.['required']">
+                Phone is required
+            </mat-error>
+
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Quantity:</mat-label>
+            <input matInput type="number" min="1" formControlName="quantity" [(ngModel)]="customer.quantity">
+
+            <mat-error *ngIf="quantity?.errors?.['required']">
+                Quantity is required
+            </mat-error>
+
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Delivery Date:</mat-label>
+            <input matInput [matDatepicker]="picker" [min]="minDate" formControlName="deliveryDate"
+                [(ngModel)]="customer.deliveryDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="deliveryDate?.errors?.['required']">
+                Delivery Date is required
+            </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Message:</mat-label>
+            <input matInput type="text" formControlName="message" [(ngModel)]="customer.message">
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Pin Code:</mat-label>
+            <input matInput type="text" formControlName="pinCode">
+            <mat-error *ngIf="pinCode?.errors?.['required']">
+                Pin Code is required
+            </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>State:</mat-label>
+            <input matInput type="text" formControlName="state" [(ngModel)]="customer.state">
+            <mat-error *ngIf="state?.errors?.['required']">
+                State is required
+            </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Full Address:</mat-label>
+            <textarea matInput formControlName="address" [(ngModel)]="customer.address"></textarea>
+        </mat-form-field><br>
+
+        <button mat-raised-button color="primary" [disabled]="!cakeForm.valid">Submit</button>
+    </form>
+</section>

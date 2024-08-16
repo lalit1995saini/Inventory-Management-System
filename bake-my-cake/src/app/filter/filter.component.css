@@ -1,0 +1,15 @@
+.btn {
+    background-color: #4b96d3;
+    color: black;
+}
+
+mat-label {
+    color: whitesmoke;
+    font-size: medium;
+}
+
+#space {
+    margin-top: 35px;
+    margin-left: 600px;
+    margin-right: 100px;
+}

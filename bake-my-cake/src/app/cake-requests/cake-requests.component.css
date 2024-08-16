@@ -1,0 +1,41 @@
+#header {
+    background-color: #96b5f0;
+}
+
+#row {
+    background-color: rgb(101, 153, 231);
+}
+
+th {
+    color: black;
+    font-size: medium;
+    font-weight: 500;
+}
+
+button {
+    margin-left: 1370px;
+    border: 1px solid #FEF2F4;
+    border-radius: 10px;
+    background-color: rgb(101, 153, 231);
+    ;
+    color: #FEF2F4;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+div {
+    background-color: rgb(101, 153, 231);
+    display: flex;
+}
+
+p {
+    color: #FEF2F4;
+    font-weight: 500;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+section {
+    height: 100%;
+}
